@@ -3,9 +3,7 @@ package com.company.services;
 import com.company.entities.*;
 
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.TreeSet;
+import java.util.*;
 
 public class TicketService {
     private ArrayList<Ticket> tickets = new ArrayList<>();
@@ -22,6 +20,7 @@ public class TicketService {
     public ArrayList<Ticket> getTickets() {
         ArrayList<Ticket> ticketCopy = new ArrayList<>();
         ticketCopy.addAll(this.tickets);
+        Collections.sort(ticketCopy, new TicketPriceComparator());
         return ticketCopy;
     }
 
