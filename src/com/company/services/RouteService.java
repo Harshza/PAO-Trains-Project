@@ -65,11 +65,25 @@ public class RouteService implements RouteInterface{
         TrainService trainService = TrainService.getInstance();
         StationService stationService = StationService.getInstance();
         System.out.println("id = ");
-        route.setId(scanner.nextInt());
+        int id;
+        try {
+            id = scanner.nextInt();
+        } catch (Exception e){
+            System.out.println("Provide int");
+            id = scanner.nextInt();
+        }
+        route.setId(id);
 
         List<Train> trains = new ArrayList<>();
         System.out.println("number of trains = ");
-        int nr = scanner.nextInt();
+        int nr;
+        try {
+            nr = scanner.nextInt();
+        } catch (Exception e){
+            System.out.println("Provide int");
+            nr = scanner.nextInt();
+        }
+
         System.out.println("trains = ");
         for(int i = 0; i < nr; ++i){
             trains.add(trainService.readTrain());
@@ -83,7 +97,14 @@ public class RouteService implements RouteInterface{
         route.setOrigin(stationService.readStation());
 
         System.out.println("distance = ");
-        route.setDistance(scanner.nextDouble());
+        double dist;
+        try {
+            dist = scanner.nextDouble();
+        } catch (Exception e){
+            System.out.println("Provide int");
+            dist = scanner.nextDouble();
+        }
+        route.setDistance(dist);
 
         return route;
     }

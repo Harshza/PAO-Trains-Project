@@ -70,23 +70,57 @@ public class TicketService implements TicketInterface{
         System.out.println("0 - First Class");
         System.out.println("1 - Second Class");
         System.out.println("2 - Bunk Bed");
-        int option = scanner.nextInt();
+        int option;
+        try {
+            option = scanner.nextInt();
+        } catch (Exception e){
+            System.out.println("Provide int between 0 and 2");
+            option = scanner.nextInt();
+        }
         if(option == 0){
             FirstClass firstClass = new FirstClass();
             System.out.println("id = ");
-            firstClass.setId(scanner.nextInt());
+            int id;
+            try {
+                id = scanner.nextInt();
+            } catch (Exception e){
+                System.out.println("Provide int");
+                id = scanner.nextInt();
+            }
+            firstClass.setId(id);
 
             System.out.println("price = ");
-            firstClass.setPrice(scanner.nextDouble());
+            double price;
+            try {
+                price = scanner.nextDouble();
+            } catch (Exception e){
+                System.out.println("Provide double");
+                price = scanner.nextDouble();
+            }
+            firstClass.setPrice(price);
 
             System.out.println("seat = ");
-            firstClass.setSeat(scanner.nextInt());
+            int seat;
+            try {
+                seat = scanner.nextInt();
+            } catch (Exception e){
+                System.out.println("Provide int");
+                seat = scanner.nextInt();
+            }
+            firstClass.setSeat(seat);
 
             System.out.println("Route = ");
             firstClass.setRoute(routeService.readRoute());
 
             System.out.println("number of meals included = ");
-            int nr = scanner.nextInt();
+            int nr;
+            try {
+                nr = scanner.nextInt();
+            } catch (Exception e){
+                System.out.println("Provide int");
+                nr = scanner.nextInt();
+            }
+
             System.out.println("meals included = ");
             ArrayList arr = new ArrayList<>();
             for(int i = 0; i < nr; ++i){
@@ -101,38 +135,96 @@ public class TicketService implements TicketInterface{
             SecondClass secondClass = new SecondClass();
 
             System.out.println("id = ");
-            secondClass.setId(scanner.nextInt());
+            int id;
+            try {
+                id = scanner.nextInt();
+            } catch (Exception e){
+                System.out.println("Provide int");
+                id = scanner.nextInt();
+            }
+            secondClass.setId(id);
 
             System.out.println("price = ");
-            secondClass.setPrice(scanner.nextDouble());
+            double price;
+            try {
+                price = scanner.nextDouble();
+            } catch (Exception e){
+                System.out.println("Provide double");
+                price = scanner.nextDouble();
+            }
+            secondClass.setPrice(price);
 
             System.out.println("seat = ");
-            secondClass.setSeat(scanner.nextInt());
+            int seat;
+            try {
+                seat = scanner.nextInt();
+            } catch (Exception e){
+                System.out.println("Provide int");
+                seat = scanner.nextInt();
+            }
+            secondClass.setSeat(seat);
 
             System.out.println("route = ");
             secondClass.setRoute(routeService.readRoute());
 
             System.out.println("discount = ");
-            secondClass.setDiscount(scanner.nextDouble());
+            double discount;
+            try {
+                discount = scanner.nextDouble();
+            } catch (Exception e){
+                System.out.println("Provide double");
+                discount = scanner.nextDouble();
+            }
+            secondClass.setDiscount(discount);
 
             return secondClass;
         } else {
             BunkBed bunkBed = new BunkBed();
 
             System.out.println("id = ");
-            bunkBed.setId(scanner.nextInt());
+            int id;
+            try {
+                id = scanner.nextInt();
+            } catch (Exception e){
+                System.out.println("Provide int");
+                id = scanner.nextInt();
+            }
+            bunkBed.setId(id);
 
             System.out.println("price = ");
-            bunkBed.setPrice(scanner.nextDouble());
+            double price;
+            try {
+                price = scanner.nextDouble();
+            } catch (Exception e){
+                System.out.println("Provide double");
+                price = scanner.nextDouble();
+            }
+            bunkBed.setPrice(price);
 
             System.out.println("seat = ");
-            bunkBed.setSeat(scanner.nextInt());
+            System.out.println("seat = ");
+            int seat;
+            try {
+                seat = scanner.nextInt();
+            } catch (Exception e){
+                System.out.println("Provide int");
+                seat = scanner.nextInt();
+            }
+            bunkBed.setSeat(seat);
 
             System.out.println("route = ");
             bunkBed.setRoute(routeService.readRoute());
 
             System.out.println("top bed = true & bottom bed = false ");
-            bunkBed.setBedPosition(scanner.nextBoolean());
+            System.out.println("seat = ");
+            boolean bed;
+            try {
+                bed = scanner.nextBoolean();
+            } catch (Exception e){
+                System.out.println("Provide int");
+                bed = scanner.nextBoolean();
+            }
+            bunkBed.setBedPosition(bed);
 
             return bunkBed;
         }

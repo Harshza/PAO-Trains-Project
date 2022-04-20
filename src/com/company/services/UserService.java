@@ -60,7 +60,14 @@ public class UserService implements Userinterface{
         User user = new User();
         Scanner scanner = new Scanner(System.in);
         System.out.println("id = ");
-        user.setId(scanner.nextInt());
+        int id;
+        try {
+            id = scanner.nextInt();
+        } catch (Exception e){
+            System.out.println("Provide int");
+            id = scanner.nextInt();
+        }
+        user.setId(id);
 
         System.out.println("name = ");
         user.setName(scanner.next());

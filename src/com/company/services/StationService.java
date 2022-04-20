@@ -63,7 +63,14 @@ public class StationService implements StationInterface{
         Scanner scanner = new Scanner(System.in);
         Station station = new Station();
         System.out.println("id = ");
-        station.setId(scanner.nextInt());
+        int id;
+        try {
+            id = scanner.nextInt();
+        } catch (Exception e){
+            System.out.println("Provide int");
+            id = scanner.nextInt();
+        }
+        station.setId(id);
 
         System.out.println("name = ");
         station.setName(scanner.next());
@@ -75,7 +82,13 @@ public class StationService implements StationInterface{
         station.setCountry(scanner.next());
 
         System.out.println("date = ");
-        String date = scanner.next();
+        String date;
+        try {
+            date = scanner.next();
+        } catch (Exception e){
+            System.out.println("Provide date in format - dd/mm/yyyy");
+            date = scanner.next();
+        }
         Date date_date = new SimpleDateFormat("dd/MM/yyyy").parse(date);
         station.setEstablishmentDate(date_date);
 

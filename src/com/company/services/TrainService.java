@@ -68,25 +68,66 @@ public class TrainService implements TrainInterface{
         System.out.println("0 - Boogie");
         System.out.println("1 - Passenger Train");
         int option = scanner.nextInt();
+        try {
+            option = scanner.nextInt();
+        } catch (Exception e){
+            System.out.println("Provide int between 0 and 1");
+            option = scanner.nextInt();
+        }
         if(option == 0){
             Boogie boogie = new Boogie();
             System.out.println("id = ");
-            boogie.setId(scanner.nextInt());
+            int id;
+            try {
+                id = scanner.nextInt();
+            } catch (Exception e){
+                System.out.println("Provide int");
+                id = scanner.nextInt();
+            }
+            boogie.setId(id);
 
             System.out.println("name = ");
             boogie.setName(scanner.next());
 
             System.out.println("speed = ");
-            boogie.setSpeed(scanner.nextDouble());
+            double speed;
+            try {
+                speed = scanner.nextDouble();
+            } catch (Exception e){
+                System.out.println("Provide double");
+                speed = scanner.nextDouble();
+            }
+
+            boogie.setSpeed(speed);
 
             System.out.println("number of waggons = ");
-            boogie.setNumberOWaggons(scanner.nextInt());
+            int wangons;
+            try {
+                wangons = scanner.nextInt();
+            } catch (Exception e){
+                System.out.println("Provide int");
+                wangons = scanner.nextInt();
+            }
+            boogie.setNumberOWaggons(wangons);
 
             System.out.println("fuel cost = ");
-            boogie.setFuelCost(scanner.nextDouble());
+            double fuel;
+            try {
+                fuel = scanner.nextDouble();
+            } catch (Exception e){
+                System.out.println("Provide double");
+                fuel = scanner.nextDouble();
+            }
+            boogie.setFuelCost(fuel);
 
             System.out.println("number of materials and quantities = ");
-            int nr = scanner.nextInt();
+            int nr;
+            try {
+                nr = scanner.nextInt();
+            } catch (Exception e){
+                System.out.println("Provide int");
+                nr = scanner.nextInt();
+            }
             ArrayList<String> mat = new ArrayList<>();
             ArrayList<Double> qua = new ArrayList<>();
             System.out.println("materials and quantities = ");
@@ -103,25 +144,68 @@ public class TrainService implements TrainInterface{
         } else {
             PassengerTrain passengerTrain = new PassengerTrain();
             System.out.println("id = ");
-            passengerTrain.setId(scanner.nextInt());
+            int id;
+            try {
+                id = scanner.nextInt();
+            } catch (Exception e){
+                System.out.println("Provide int");
+                id = scanner.nextInt();
+            }
+            passengerTrain.setId(id);
 
             System.out.println("name = ");
             passengerTrain.setName(scanner.next());
 
             System.out.println("speed = ");
-            passengerTrain.setSpeed(scanner.nextDouble());
+            double speed;
+            try {
+                speed = scanner.nextDouble();
+            } catch (Exception e){
+                System.out.println("Provide double");
+                speed = scanner.nextDouble();
+            }
+            passengerTrain.setSpeed(speed);
 
             System.out.println("number of waggons = ");
-            passengerTrain.setNumberOWaggons(scanner.nextInt());
+            int nr;
+            try {
+                nr = scanner.nextInt();
+            } catch (Exception e){
+                System.out.println("Provide int");
+                nr = scanner.nextInt();
+            }
+
+            passengerTrain.setNumberOWaggons(nr);
 
             System.out.println("fuel cost = ");
-            passengerTrain.setFuelCost(scanner.nextDouble());
+            double fuel;
+            try {
+                fuel = scanner.nextDouble();
+            } catch (Exception e){
+                System.out.println("Provide double");
+                fuel = scanner.nextDouble();
+            }
+
+            passengerTrain.setFuelCost(fuel);
 
             System.out.println("number of seats = ");
-            passengerTrain.setNumberOfSeats(scanner.nextInt());
+            try {
+                nr = scanner.nextInt();
+            } catch (Exception e){
+                System.out.println("Provide int");
+                nr = scanner.nextInt();
+            }
+
+            passengerTrain.setNumberOfSeats(nr);
 
             System.out.println("number of classes = ");
-            passengerTrain.setNumberOfClasses(scanner.nextInt());
+            try {
+                nr = scanner.nextInt();
+            } catch (Exception e){
+                System.out.println("Provide int");
+                nr = scanner.nextInt();
+            }
+            passengerTrain.setNumberOfClasses(nr);
 
             return passengerTrain;
         }
