@@ -5,7 +5,7 @@ import com.company.entities.User;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class UserService {
+public class UserService implements Userinterface{
     private ArrayList<User> users = new ArrayList<>();
 
     private static UserService instance;
