@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
-public class StationService {
+public class StationService implements StationInterface{
     private ArrayList<Station> stations = new ArrayList<>();
 
     private static StationService instance;
@@ -59,7 +59,7 @@ public class StationService {
         }
     }
 
-    Station readStation() throws ParseException {
+    public Station readStation() throws ParseException {
         Scanner scanner = new Scanner(System.in);
         Station station = new Station();
         System.out.println("id = ");
