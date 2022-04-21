@@ -29,12 +29,11 @@ public class PassengerTrain extends Train {
     }
 
     @Override
-    public void trainInfo() {
-        System.out.println("Train: " + this.name);
-        System.out.println("Type: " + "passanger train");
-        System.out.println("Speed: " + this.speed);
-        System.out.println("Fuel Cost: " + this.fuelCost);
-        System.out.println("Number of seats: " + this.numberOfSeats);
-        System.out.println("Number of classes: " + this.numberOfClasses);
+    public String toString() {
+        String result = "Train: " + this.name + "\n" + "Type: " + "boogie" + "\n" + "Speed: " + this.speed + "\n" + "Fuel Cost: " + this.fuelCost + "\n";
+        result += "Number of seats: " + this.numberOfSeats + "\n";
+        result += "Number of classes: " + this.numberOfClasses + "\n";
+        return result;
     }
+
 }

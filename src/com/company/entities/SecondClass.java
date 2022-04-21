@@ -19,10 +19,11 @@ public class SecondClass extends Ticket {
     }
 
     @Override
-    public void ticketInfo() {
-        System.out.println("Price: " + this.price);
-        System.out.println("Seat: " + this.seat);
-        this.route.routeInfo();
-        System.out.println("Discount: " + this.discount);
+    public String toString() {
+        final String[] result = {"Price: " + this.price + "\n"};
+        result[0] += "Seat: " + this.seat + "\n";
+        result[0] += route.toString();
+        result[0] += "Discount: " + this.discount + "\n";
+        return result[0];
     }
 }

@@ -60,10 +60,9 @@ public class Station {
         this.establishmentDate = establishmentDate;
     }
 
-    public void stationInfo(){
-        System.out.println("Name: " + this.name);
-        System.out.println("City: " + this.city);
-        System.out.println("Country: " + this.country);
-        System.out.println("Data of Establishment: " + this.establishmentDate);
+    public String toString(){
+        String result = "Name: " + this.name + "\n" + "City: " + this.city + "\n" + "Country: " + this.country + "\n";
+        result += "Data of Establishment: " + this.establishmentDate + "\n";
+        return result;
     }
 }

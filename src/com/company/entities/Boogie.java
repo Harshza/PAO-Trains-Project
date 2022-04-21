@@ -31,13 +31,11 @@ public class Boogie extends Train {
     }
 
     @Override
-    public void trainInfo() {
-        System.out.println("Train: " + this.name);
-        System.out.println("Type: " + "boogie");
-        System.out.println("Speed: " + this.speed);
-        System.out.println("Fuel Cost: " + this.fuelCost);
+    public String toString() {
+        String result = "Train: " + this.name + "\n" + "Type: " + "boogie" + "\n" + "Speed: " + this.speed + "\n" + "Fuel Cost: " + this.fuelCost + "\n";
         for(int i = 0; i < materials.size(); ++i){
-            System.out.println("Material:" + materials.get(i) + "Quantity:" + quantity.get(i));
+            result += "Material:" + materials.get(i) + "\n" +  "Quantity:" + quantity.get(i) + "\n";
         }
+        return result;
     }
 }

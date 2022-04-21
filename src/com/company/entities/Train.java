@@ -57,5 +57,4 @@ public abstract class Train {
         this.fuelCost = fuelCost;
     }
 
-    public abstract void trainInfo();
 }

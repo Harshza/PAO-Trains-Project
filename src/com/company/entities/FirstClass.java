@@ -22,11 +22,16 @@ public class FirstClass extends Ticket {
     }
 
     @Override
-    public void ticketInfo() {
-        System.out.println("Price: " + this.price);
-        System.out.println("Seat: " + this.seat);
-        this.route.routeInfo();
-        System.out.println("Meals included:");
-        mealsIncluded.forEach(System.out::println);
+    public String toString() {
+        final String[] result = {"Price: " + this.price + "\n"};
+        result[0] += "Seat: " + this.seat + "\n";
+        result[0] += route.toString();
+        result[0] += "Meals included:\n";
+        final String[] meals = {""};
+        mealsIncluded.forEach(meal -> {
+            meals[0] += meal + "\n";
+        });
+        result[0] += meals[0];
+        return result[0];
     }
 }

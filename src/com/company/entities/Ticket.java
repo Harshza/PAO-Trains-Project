@@ -48,6 +48,4 @@ public abstract class Ticket {
     public void setRoute(Route route) {
         this.route = route;
     }
-
-    public abstract void ticketInfo();
 }

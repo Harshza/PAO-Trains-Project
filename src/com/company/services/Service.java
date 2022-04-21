@@ -52,13 +52,13 @@ public class Service {
                     int opt = scanner.nextInt();
                     if(opt == 0){
                         for(int i = 0; i < ticketService.getTickets().size(); ++i){
-                            ticketService.getTickets().get(i).ticketInfo();
+                            System.out.println(ticketService.getTickets().get(i).toString());
                         }
                     } else if(opt == 1){
                         int index = scanner.nextInt();
                         for(int i = 0; i < ticketService.getTickets().size(); ++i){
                             if(ticketService.getTickets().get(i).getId() == index){
-                                ticketService.getTickets().get(i).ticketInfo();
+                                System.out.println(ticketService.getTickets().get(i).toString());
                                 break;
                             }
                         }
@@ -92,13 +92,13 @@ public class Service {
                     int opt = scanner.nextInt();
                     if(opt == 0){
                         for(int i = 0; i < trainService.getTrains().size(); ++i){
-                            trainService.getTrains().get(i).trainInfo();
+                            System.out.println(trainService.getTrains().get(i).toString());
                         }
                     } else if(opt == 1){
                         int index = scanner.nextInt();
                         for(int i = 0; i < trainService.getTrains().size(); ++i){
                             if(trainService.getTrains().get(i).getId() == index){
-                                trainService.getTrains().get(i).trainInfo();
+                                System.out.println(trainService.getTrains().get(i).toString());
                                 break;
                             }
                         }
@@ -133,13 +133,13 @@ public class Service {
                     int opt = scanner.nextInt();
                     if(opt == 0){
                         for(int i = 0; i < routeService.getRoutes().size(); ++i){
-                            routeService.getRoutes().get(i).routeInfo();
+                            System.out.println(routeService.getRoutes().get(i).toString());
                         }
                     } else if(opt == 1){
                         int index = scanner.nextInt();
                         for(int i = 0; i < routeService.getRoutes().size(); ++i){
                             if(routeService.getRoutes().get(i).getId() == index){
-                                routeService.getRoutes().get(i).routeInfo();
+                                System.out.println(routeService.getRoutes().get(i).toString());
                                 break;
                             }
                         }
@@ -173,13 +173,13 @@ public class Service {
                     int opt = scanner.nextInt();
                     if(opt == 0){
                         for(int i = 0; i < stationsService.getStations().size(); ++i){
-                            stationsService.getStations().get(i).stationInfo();
+                            System.out.println(stationsService.getStations().get(i).toString());
                         }
                     } else if(opt == 1){
                         int index = scanner.nextInt();
                         for(int i = 0; i < stationsService.getStations().size(); ++i){
                             if(stationsService.getStations().get(i).getId() == index){
-                                stationsService.getStations().get(i).stationInfo();
+                                System.out.println(stationsService.getStations().get(i).toString());
                                 break;
                             }
                         }
@@ -213,13 +213,13 @@ public class Service {
                     int opt = scanner.nextInt();
                     if(opt == 0){
                         for(int i = 0; i < userService.getUsers().size(); ++i){
-                            userService.getUsers().get(i).userInfo();
+                            System.out.println(userService.getUsers().get(i).toString());
                         }
                     } else if(opt == 1){
                         int index = scanner.nextInt();
                         for(int i = 0; i < userService.getUsers().size(); ++i){
                             if(userService.getUsers().get(i).getId() == index){
-                                userService.getUsers().get(i).userInfo();
+                                System.out.println(userService.getUsers().get(i).toString());
                                 break;
                             }
                         }

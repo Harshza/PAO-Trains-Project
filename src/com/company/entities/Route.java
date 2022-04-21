@@ -59,20 +59,22 @@ public class Route {
         this.distance = distance;
     }
 
-    public void routeInfo(){
-        this.origin.stationInfo();
-        this.destination.stationInfo();
-        System.out.println("Distance: " + this.distance);
+    public String toString(){
+        String result = this.origin.toString();
+        result += this.destination.toString();
+        result += "Distance: " + this.distance + "\n";
         for(int i = 0; i < trains.size(); ++i){
             if(trains.get(i) instanceof Boogie){
                 Boogie boogie = (Boogie) trains.get(i);
-                boogie.trainInfo();
+                result += boogie.toString();
             }
             else if(trains.get(i) instanceof PassengerTrain){
                 PassengerTrain passengerTrain = (PassengerTrain) trains.get(i);
-                passengerTrain.trainInfo();
+                result += passengerTrain.toString();
             }
         }
-
+        return result;
     }
+
+
 }

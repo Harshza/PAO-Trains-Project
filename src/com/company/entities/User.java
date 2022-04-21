@@ -1,20 +1,31 @@
 package com.company.entities;
 
+import java.util.List;
+
 public class User {
     private int id;
     private String name;
     private String phoneNumber;
     private String email;
     private String address;
-
+    private List<Ticket> tickets;
     public User(){}
 
-    public User(int id, String name, String phoneNumber, String email, String address) {
+    public User(int id, String name, String phoneNumber, String email, String address, List<Ticket> tickets) {
         this.id = id;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.address = address;
+        this.tickets = tickets;
+    }
+
+    public List<Ticket> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
     }
 
     public int getId() {
@@ -57,11 +68,23 @@ public class User {
         this.address = address;
     }
 
-    public void userInfo() {
-        System.out.println("Name: " + this.name);
-        System.out.println("Phone number: " + this.phoneNumber);
-        System.out.println("Email address: " + this.email);
-        System.out.println("Home address: " + this.address);
+    @Override
+    public String toString() {
+        String result =  "Name: " + this.name + "\n" + "Phone number: " + this.phoneNumber + "\n" + "Email address: " + this.email + "\n" + "Home address: " + this.address + "\n";
+        for(int i = 0; i < this.tickets.size(); ++ i){
+            if(tickets.get(i) instanceof FirstClass){
+                FirstClass firstClass = (FirstClass) tickets.get(i);
+                result += firstClass.toString();
+            }
+            else if(tickets.get(i) instanceof BunkBed){
+                BunkBed bunkBed = (BunkBed) tickets.get(i);
+                result += bunkBed.toString();
+            } else if(tickets.get(i) instanceof SecondClass){
+                SecondClass secondClass = (SecondClass) tickets.get(i);
+                result += secondClass.toString();
+            }
+        }
+        return result;
     }
 
 }
