@@ -1,0 +1,6 @@
+Id,Price,Seat,Route Id,Bed Position
+6,250,17,3,TRUE
+7,350,18,2,FALSE
+8,300,3,5,FALSE
+9,315,5,4,TRUE
+10,325,21,1,FALSE

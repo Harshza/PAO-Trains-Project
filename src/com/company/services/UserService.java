@@ -1,8 +1,12 @@
 package com.company.services;
 
+import com.company.entities.Ticket;
+import com.company.entities.Train;
 import com.company.entities.User;
 
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserService {
@@ -56,7 +60,7 @@ public class UserService {
         }
     }
 
-    public User readUser(){
+    public User readUser() throws ParseException {
         User user = new User();
         Scanner scanner = new Scanner(System.in);
         System.out.println("id = ");
@@ -74,6 +78,15 @@ public class UserService {
         System.out.println("address = ");
         user.setAddress(scanner.next());
 
+        List<Ticket> tickets = new ArrayList<>();
+        TicketService ticketService = TicketService.getInstance();
+        System.out.println("number of tickets = ");
+        int nr = scanner.nextInt();
+        System.out.println("tickets = ");
+        for(int i = 0; i < nr; ++i){
+            tickets.add(ticketService.readTicket());
+        }
+        user.setTickets(tickets);
         return user;
-    }
+    \][]\}
 }
