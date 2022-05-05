@@ -9,9 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class UserService {
+public class UserService implements UserInterface{
     private ArrayList<User> users = new ArrayList<>();
 
+    private UserService(){};
     private static UserService instance;
 
     public static UserService getInstance(){
@@ -88,5 +89,5 @@ public class UserService {
         }
         user.setTickets(tickets);
         return user;
-    \][]\}
+    }
 }

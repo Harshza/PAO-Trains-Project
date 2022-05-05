@@ -8,9 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class RouteService {
+public class RouteService implements RouteInterface{
     private ArrayList<Route> routes = new ArrayList<>();
 
+    private RouteService(){}
     private static RouteService instance;
 
     public static RouteService getInstance(){
@@ -59,7 +60,7 @@ public class RouteService {
         }
     }
 
-    Route readRoute() throws ParseException {
+    public Route readRoute() throws ParseException {
         Route route = new Route();
         Scanner scanner = new Scanner(System.in);
         TrainService trainService = TrainService.getInstance();

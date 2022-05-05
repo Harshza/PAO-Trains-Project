@@ -7,9 +7,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.TreeSet;
 
-public class TicketService {
+public class TicketService implements TicketInterface{
     private ArrayList<Ticket> tickets = new ArrayList<>();
 
+    private TicketService(){}
     private static TicketService instance;
 
     public static TicketService getInstance(){
@@ -65,7 +66,7 @@ public class TicketService {
         }
     }
 
-    Ticket readTicket() throws ParseException { // 0 = FirstClass; 1 = SecondClass; 2 = BunkBed
+    public Ticket readTicket() throws ParseException { // 0 = FirstClass; 1 = SecondClass; 2 = BunkBed
         Scanner scanner = new Scanner(System.in);
         RouteService routeService = RouteService.getInstance();
         System.out.println("0 - First Class");

@@ -7,9 +7,10 @@ import com.company.entities.PassengerTrain;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TrainService {
+public class TrainService implements TrainInterface{
     private ArrayList<Train> trains = new ArrayList<>();
 
+    private TrainService() {}
     private static TrainService instance;
 
     public static TrainService getInstance(){
@@ -63,7 +64,7 @@ public class TrainService {
         }
     }
 
-    Train readTrain(){
+    public Train readTrain(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("0 - Boogie");
         System.out.println("1 - Passenger Train");
