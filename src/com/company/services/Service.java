@@ -9,6 +9,7 @@ import com.company.entities.Train;
 import com.company.entities.User;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Service {
@@ -19,6 +20,7 @@ public class Service {
     private static RouteService routeService = RouteService.getInstance();
     private static StationService stationsService = StationService.getInstance();
 
+    private static AuditService auditService = AuditService.getInstance();
     private Scanner scanner = new Scanner(System.in);
 
     public static Service getInstance(){
@@ -26,6 +28,18 @@ public class Service {
             instance = new Service();
         }
         return instance;
+    }
+
+    public void writeResults(){
+        ticketService.write(ticketService.getTickets());
+
+        trainService.write(trainService.getTrains());
+
+        userService.write(userService.getUsers());
+
+        routeService.write(routeService.getRoutes());
+
+        stationsService.write(stationsService.getStations());
     }
 
     public void printOptions(){
@@ -51,6 +65,9 @@ public class Service {
                     System.out.println(" 5 - Exit");
                     int opt = scanner.nextInt();
                     if(opt == 0){
+                        SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                        String timeStamp = date.format(new Date());
+                        auditService.audit("Print all Tickets" , timeStamp);
                         for(int i = 0; i < ticketService.getTickets().size(); ++i){
                             System.out.println(ticketService.getTickets().get(i).toString());
                         }
@@ -246,6 +263,7 @@ public class Service {
                 break;
             }
         }
+        writeResults();
     }
 
 }
