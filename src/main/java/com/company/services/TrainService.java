@@ -72,8 +72,10 @@ public class TrainService implements TrainInterface, CSVReaderWriter<Train>{
         int option = scanner.nextInt();
         if(option == 0){
             Boogie boogie = new Boogie();
-            System.out.println("id = ");
-            boogie.setId(scanner.nextInt());
+//            System.out.println("id = ");
+//            boogie.setId(scanner.nextInt());
+
+            boogie.setId(getMaxId() + 1);
 
             System.out.println("name = ");
             boogie.setName(scanner.next());
@@ -104,8 +106,10 @@ public class TrainService implements TrainInterface, CSVReaderWriter<Train>{
             return boogie;
         } else {
             PassengerTrain passengerTrain = new PassengerTrain();
-            System.out.println("id = ");
-            passengerTrain.setId(scanner.nextInt());
+//            System.out.println("id = ");
+//            passengerTrain.setId(scanner.nextInt());
+
+            passengerTrain.setId(getMaxId() + 1);
 
             System.out.println("name = ");
             passengerTrain.setName(scanner.next());
@@ -233,9 +237,9 @@ public class TrainService implements TrainInterface, CSVReaderWriter<Train>{
     }
 
     public List<Boogie> readBoogies(){
-        String fileName = "src/com/company/resources/data - Boogie.csv";
+        String fileName = "src/main/java/com/company/resources/data - Boogie.csv";
         File file = new File(fileName);
-        String extraFileName = "src/com/company/resources/data - Boogie_Info.csv";
+        String extraFileName = "src/main/java/com/company/resources/data - Boogie_Info.csv";
         File extraFile = new File(extraFileName);
 
         try {
@@ -333,7 +337,7 @@ public class TrainService implements TrainInterface, CSVReaderWriter<Train>{
     }
 
     public List<PassengerTrain> readPassangerTrain(){
-        String fileName = "src/com/company/resources/data - PassengerTrain.csv";
+        String fileName = "src/main/java/com/company/resources/data - PassengerTrain.csv";
         File file = new File(fileName);
 
         try {
@@ -390,7 +394,7 @@ public class TrainService implements TrainInterface, CSVReaderWriter<Train>{
 
     @Override
     public void write(List<Train> objects){
-        String fileName = "src/com/company/resources/data - Boogie.csv";
+        String fileName = "src/main/java/com/company/resources/data - Boogie.csv";
         File file = new File(fileName);
 
         try{
@@ -419,7 +423,7 @@ public class TrainService implements TrainInterface, CSVReaderWriter<Train>{
         } catch (IOException e1) {
             e1.printStackTrace();
         }
-        fileName = "src/com/company/resources/data - Boogie_Info.csv";
+        fileName = "src/main/java/com/company/resources/data - Boogie_Info.csv";
         file = new File(fileName);
 
         try{
@@ -468,7 +472,7 @@ public class TrainService implements TrainInterface, CSVReaderWriter<Train>{
         } catch (IOException e1) {
             e1.printStackTrace();
         }
-        String fileName1 = "src/com/company/resources/data - PassengerTrain.csv";
+        String fileName1 = "src/main/java/com/company/resources/data - PassengerTrain.csv";
         File file1 = new File(fileName1);
 
         try{

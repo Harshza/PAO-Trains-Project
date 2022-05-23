@@ -76,8 +76,10 @@ public class TicketService implements TicketInterface, CSVReaderWriter<Ticket>{
         int option = scanner.nextInt();
         if(option == 0){
             FirstClass firstClass = new FirstClass();
-            System.out.println("id = ");
-            firstClass.setId(scanner.nextInt());
+//            System.out.println("id = ");
+//            firstClass.setId(scanner.nextInt());
+
+            firstClass.setId(getMaxId() + 1);
 
             System.out.println("price = ");
             firstClass.setPrice(scanner.nextDouble());
@@ -105,8 +107,10 @@ public class TicketService implements TicketInterface, CSVReaderWriter<Ticket>{
         } else if (option == 1){
             SecondClass secondClass = new SecondClass();
 
-            System.out.println("id = ");
-            secondClass.setId(scanner.nextInt());
+//            System.out.println("id = ");
+//            secondClass.setId(scanner.nextInt());
+
+            secondClass.setId(getMaxId() + 1);
 
             System.out.println("price = ");
             secondClass.setPrice(scanner.nextDouble());
@@ -124,8 +128,10 @@ public class TicketService implements TicketInterface, CSVReaderWriter<Ticket>{
         } else {
             BunkBed bunkBed = new BunkBed();
 
-            System.out.println("id = ");
-            bunkBed.setId(scanner.nextInt());
+//            System.out.println("id = ");
+//            bunkBed.setId(scanner.nextInt());
+
+            bunkBed.setId(getMaxId() + 1);
 
             System.out.println("price = ");
             bunkBed.setPrice(scanner.nextDouble());
@@ -313,9 +319,9 @@ public class TicketService implements TicketInterface, CSVReaderWriter<Ticket>{
     }
 
     public List<FirstClass> readFirstClass(){
-        String fileName = "src/com/company/resources/data - FirstClass.csv";
+        String fileName = "src/main/java/com/company/resources/data - FirstClass.csv";
         File file = new File(fileName);
-        String extraFileName = "src/com/company/resources/data - FirstClass_Info.csv";
+        String extraFileName = "src/main/java/com/company/resources/data - FirstClass_Info.csv";
         File extraFile = new File(extraFileName);
 
         try {
@@ -403,9 +409,9 @@ public class TicketService implements TicketInterface, CSVReaderWriter<Ticket>{
     }
 
     public List<BunkBed> readBunkBed(){
-        String fileName = "src/com/company/resources/data - BunkBed.csv";
+        String fileName = "src/main/java/com/company/resources/data - BunkBed.csv";
         File file = new File(fileName);
-        String extraFileName = "src/com/company/resources/data - BunkBed_Info.csv";
+        String extraFileName = "src/main/java/com/company/resources/data - BunkBed_Info.csv";
         File extraFile = new File(extraFileName);
 
         try {
@@ -493,7 +499,7 @@ public class TicketService implements TicketInterface, CSVReaderWriter<Ticket>{
     }
 
     public List<SecondClass> readSecondClass(){
-        String fileName = "src/com/company/resources/data - SecondClass.csv";
+        String fileName = "src/main/java/com/company/resources/data - SecondClass.csv";
         File file = new File(fileName);
 
         try {
@@ -552,7 +558,7 @@ public class TicketService implements TicketInterface, CSVReaderWriter<Ticket>{
 
     @Override
     public void write(List<Ticket> objects){
-        String fileName = "src/com/company/resources/data - BunkBed.csv";
+        String fileName = "src/main/java/com/company/resources/data - BunkBed.csv";
         File file = new File(fileName);
 
         try{
@@ -581,7 +587,7 @@ public class TicketService implements TicketInterface, CSVReaderWriter<Ticket>{
         } catch (IOException e1) {
             e1.printStackTrace();
         }
-        fileName = "src/com/company/resources/data - BunkBed_Info.csv";
+        fileName = "src/main/java/com/company/resources/data - BunkBed_Info.csv";
         file = new File(fileName);
 
         try{
@@ -625,7 +631,7 @@ public class TicketService implements TicketInterface, CSVReaderWriter<Ticket>{
             e1.printStackTrace();
         }
 
-        fileName = "src/com/company/resources/data - FirstClass.csv";
+        fileName = "src/main/java/com/company/resources/data - FirstClass.csv";
         file = new File(fileName);
 
         try{
@@ -656,7 +662,7 @@ public class TicketService implements TicketInterface, CSVReaderWriter<Ticket>{
         } catch (IOException e1) {
             e1.printStackTrace();
         }
-        fileName = "src/com/company/resources/data - FirstClass_Info.csv";
+        fileName = "src/main/java/com/company/resources/data - FirstClass_Info.csv";
         file = new File(fileName);
 
         try{
@@ -702,7 +708,7 @@ public class TicketService implements TicketInterface, CSVReaderWriter<Ticket>{
             e1.printStackTrace();
         }
 
-        String fileName1 = "src/com/company/resources/data - SecondClass.csv";
+        String fileName1 = "src/main/java/com/company/resources/data - SecondClass.csv";
         File file1 = new File(fileName1);
 
         try{

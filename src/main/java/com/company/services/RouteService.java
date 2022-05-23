@@ -155,7 +155,7 @@ public class RouteService implements RouteInterface, CSVReaderWriter<Route>{
 
     @Override
     public String getFileName() {
-        return "src/com/company/resources/data - Route.csv";
+        return "src/main/java/com/company/resources/data - Route.csv";
     }
 
     @Override
@@ -186,7 +186,7 @@ public class RouteService implements RouteInterface, CSVReaderWriter<Route>{
     public List<Route> read(){
         String fileName = this.getFileName();
         File file = new File(fileName);
-        String extraFileName = "src/com/company/resources/data - Route_Info.csv";
+        String extraFileName = "src/main/java/com/company/resources/data - Route_Info.csv";
         File extraFile = new File(extraFileName);
 
         try {
@@ -343,7 +343,7 @@ public class RouteService implements RouteInterface, CSVReaderWriter<Route>{
         } catch (IOException e1) {
             e1.printStackTrace();
         }
-        fileName = "src/com/company/resources/data - Route_Info.csv";
+        fileName = "src/main/java/com/company/resources/data - Route_Info.csv";
         file = new File(fileName);
 
         try{

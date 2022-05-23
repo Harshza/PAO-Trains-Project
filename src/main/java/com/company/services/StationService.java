@@ -125,7 +125,7 @@ public class StationService implements StationInterface, CSVReaderWriter<Station
 
     @Override
     public String getFileName() {
-        String path = "src/com/company/resources/data - Station.csv";
+        String path = "src/main/java/com/company/resources/data - Station.csv";
         return path;
     }
 

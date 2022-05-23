@@ -1,13 +1,11 @@
 package com.company.services;
 
-import com.company.entities.Ticket;
-import com.company.entities.Train;
-import com.company.entities.User;
+import com.company.entities.*;
 
+import java.io.*;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class UserService implements UserInterface, CSVReaderWriter<User>{
     private ArrayList<User> users = new ArrayList<>();
@@ -66,8 +64,10 @@ public class UserService implements UserInterface, CSVReaderWriter<User>{
     public User readUser() throws ParseException {
         User user = new User();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("id = ");
-        user.setId(scanner.nextInt());
+//        System.out.println("id = ");
+//        user.setId(scanner.nextInt());
+
+        user.setId(getMaxId() + 1);
 
         System.out.println("name = ");
         user.setName(scanner.next());
@@ -138,7 +138,7 @@ public class UserService implements UserInterface, CSVReaderWriter<User>{
 
     @Override
     public String getFileName() {
-        String path = "src/com/company/resources/data - User.csv";
+        String path = "src/main/java/com/company/resources/data - User.csv";
         return path;
     }
 
@@ -157,7 +157,7 @@ public class UserService implements UserInterface, CSVReaderWriter<User>{
     public List<User> read(){
         String fileName = this.getFileName();
         File file = new File(fileName);
-        String extraFileName = "src/com/company/resources/data - User_Info.csv";
+        String extraFileName = "src/main/java/com/company/resources/data - User_Info.csv";
         File extraFile = new File(extraFileName);
 
         try {
@@ -324,7 +324,7 @@ public class UserService implements UserInterface, CSVReaderWriter<User>{
         } catch (IOException e1) {
             e1.printStackTrace();
         }
-        fileName = "src/com/company/resources/data - User_Info.csv";
+        fileName = "src/main/java/com/company/resources/data - User_Info.csv";
         file = new File(fileName);
 
         try{
