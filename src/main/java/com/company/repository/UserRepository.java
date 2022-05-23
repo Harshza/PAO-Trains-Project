@@ -84,7 +84,7 @@ public class UserRepository {
         String createSql = "CREATE TABLE IF NOT EXISTS user " +
                 "(id int PRIMARY KEY AUTO_INCREMENT, " +
                 "name varchar(50), " +
-                "phoneNumber varchar(50) " +
+                "phoneNumber varchar(50) ," +
                 "email varchar(50), " +
                 "address varchar(50)" +
                 ")";

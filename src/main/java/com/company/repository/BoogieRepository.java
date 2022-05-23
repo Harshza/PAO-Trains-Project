@@ -41,7 +41,7 @@ public class BoogieRepository {
                     if(str1.charAt(i) == '#')
                         ++nr1;
                 }
-                String[] quantities = str.split("#", nr1);
+                String[] quantities = str1.split("#", nr1);
                 ArrayList<Double> quants = new ArrayList<Double>();
                 for(int i = 0; i < mats.size(); ++i){
                     quants.add(Double.parseDouble(quantities[i]));
